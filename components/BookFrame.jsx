@@ -1,14 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import styles from './BookFrame.scss'
 
 const BookWrapper = styled.div`
   display: flex;
   align-items: center;
+  background: #212121;
+  justify-content: center;
   width: 50%;
   border: 1px solid black;
+  font: "RobotoDraft", sans-serif;
+  color: #fff;
 `
 
 const BookDetails = styled.div`
+  border-left: 1px solid black;
   padding: 10px;
   width: 80%;
   
@@ -17,20 +23,28 @@ const BookDetails = styled.div`
   }
 `
 const ReadCheck = styled.div`
-  margin: 0px 20px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  
+  input[type="checkbox"]{
+    display: none;
+  }
 `
-
 const BookImg = styled.div`
-  border-right: 1px solid black;
   height: 100%;
   display: flex;
   align-items: center;
-  border-left: 1px solid black;
   
   img {
-    margin: 0px 10px;
+    margin: 0 10px;
+    width: 75px;
+    height: 107px;
   }
 `
+
+
 
 class BookFrame extends React.Component {
   constructor(props) {
@@ -42,20 +56,27 @@ class BookFrame extends React.Component {
   }
   
   render() {
+    
     return (
       <BookWrapper>
-        <ReadCheck >
-          <input type='checkbox' />
+        <ReadCheck>
+          <div>
+            <input id='one' type='checkbox' />
+            <label for='one'>
+              <span></span>
+            </label>
+          </div>
         </ReadCheck>
-        <BookImg> 
-          <img src='https://images.gr-assets.com/books/1474171184s/136251.jpg' />
-        </BookImg>
+        
         <BookDetails>
           <h1>1. Harry Potter Series</h1>
           <h2>by J.K. Rowling</h2>
           <p>Good Reads rating: 4.62</p>
           <p>Good Reads number of ratings 1,987,629</p>
         </BookDetails>
+        <BookImg> 
+          <img src='https://images.gr-assets.com/books/1474171184s/136251.jpg' />
+        </BookImg>
       </BookWrapper>
     )
   }

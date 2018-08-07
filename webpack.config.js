@@ -8,6 +8,7 @@ var config = {
       inline: true,
       port: 8088
    },
+   mode: "development",
    module: {
       rules: [
          {
@@ -19,6 +20,14 @@ var config = {
                  presets: ['es2015', 'react']
               }
             }
+         },
+         {
+           test: /\.scss$/,
+            use: [
+                "style-loader",
+                "css-loader",
+                "sass-loader"
+            ]
          }
       ]
    },
