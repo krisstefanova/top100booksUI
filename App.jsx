@@ -1,5 +1,5 @@
 import React from 'react';
-import BookFrame from './components/BookFrame';
+import BooksFrame from './components/BooksFrame';
 import styled from 'styled-components';
 
 const SiteFrame = styled.div`
@@ -11,7 +11,7 @@ class App extends React.Component {
    render() {
       return (
          <SiteFrame>
-            <BookFrame />
+            <BooksFrame />
          </SiteFrame>
       );
    }
